@@ -13,7 +13,7 @@
         <scene sceneID="K0Y-TN-0p8">
             <objects>
                 <navigationController id="KKQ-1F-uqg" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wHB-oD-guM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wHB-oD-guM" customClass="FUINavigationBar" customModule="SAPFiori">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="-201" y="58"/>
         </scene>
-        <!--View Controller-->
+        <!--Shop-->
         <scene sceneID="eAw-mL-yM1">
             <objects>
-                <viewController id="ZeL-AB-InM" sceneMemberID="viewController">
+                <viewController id="ZeL-AB-InM" customClass="ProductListViewController" customModule="Shop" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QuJ-LW-bn0"/>
                         <viewControllerLayoutGuide type="bottom" id="2KS-G8-xp3"/>
@@ -38,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="9nX-wc-WQu"/>
+                    <navigationItem key="navigationItem" title="Shop" id="9nX-wc-WQu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMS-NF-dus" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
