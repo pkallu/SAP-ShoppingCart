@@ -96,6 +96,7 @@
 		A5B14D6E1E8E66B600950FD4 /* SAPOData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5B14D5B1E8E665A00950FD4 /* SAPOData.framework */; };
 		A5B14D6F1E8E66B600950FD4 /* SAPOData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5B14D5B1E8E665A00950FD4 /* SAPOData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A5C12E591E8E5883008B9D0A /* ShopProxyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C12E581E8E5883008B9D0A /* ShopProxyExtension.swift */; };
+		EF83569B1F64E2CB00FA5F1D /* ConfigurationProvider.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF83569A1F64E2CB00FA5F1D /* ConfigurationProvider.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -203,6 +204,7 @@
 		A5B14D5A1E8E665A00950FD4 /* SAPFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPFoundation.framework; sourceTree = "<group>"; };
 		A5B14D5B1E8E665A00950FD4 /* SAPOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPOData.framework; sourceTree = "<group>"; };
 		A5C12E581E8E5883008B9D0A /* ShopProxyExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopProxyExtension.swift; sourceTree = "<group>"; };
+		EF83569A1F64E2CB00FA5F1D /* ConfigurationProvider.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ConfigurationProvider.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				A5B14CC91E8E5F3D00950FD4 /* Shop.swift */,
+				EF83569A1F64E2CB00FA5F1D /* ConfigurationProvider.plist */,
 				A58403D31E8E53FB00C6817A /* ShopProxy.swift */,
 				A5C12E581E8E5883008B9D0A /* ShopProxyExtension.swift */,
 				755EE24A1DD4760600F41DC4 /* AppDelegate.swift */,
@@ -703,6 +706,7 @@
 			files = (
 				A5B14CFD1E8E619400950FD4 /* WorklistCell.xib in Resources */,
 				A52D9CFA1EA792EF0013F06A /* RatingStarsProgressAmount.xib in Resources */,
+				EF83569B1F64E2CB00FA5F1D /* ConfigurationProvider.plist in Resources */,
 				A5B14D4F1E8E64B000950FD4 /* ReviewCell.xib in Resources */,
 				A52D9CF81EA792EE0013F06A /* RatingStars.xib in Resources */,
 				755EE2551DD4760700F41DC4 /* LaunchScreen.storyboard in Resources */,

@@ -26,6 +26,26 @@ class Shop {
     /// Initializes the dataService and dataProvider
     private init() {
         imageCache.name = "Loaded Images"
-        oDataService = nil
+        guard let connectionParameters = ConnectionManager.shared.connectionParameters,
+            let serviceEndpointURL = connectionParameters.serverURL else {
+                
+                oDataService = nil
+                return
+        }
+        
+        let onlineODataProvider = OnlineODataProvider(serviceRoot: serviceEndpointURL, sapURLSession: ConnectionManager.shared.sapUrlSession!)
+        
+        // choose desired tracing settings for OData traffic
+        onlineODataProvider.prettyTracing = true
+        onlineODataProvider.traceRequests = true
+        onlineODataProvider.traceWithData = false
+        
+        // allow PATCH to be tunneled via POST (potential gateway restrictions)
+        onlineODataProvider.networkOptions.tunneledMethods.append("PATCH")
+        
+        // to actually see the requested output from above, logging for OData needs to be forced to debug level
+        // Logger.shared(named: "SAP.OData").logLevel = .debug
+        
+        oDataService = ShopService(provider: onlineODataProvider)
     }
 }
