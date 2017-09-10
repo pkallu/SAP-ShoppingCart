@@ -97,6 +97,7 @@
 		A5B14D6F1E8E66B600950FD4 /* SAPOData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5B14D5B1E8E665A00950FD4 /* SAPOData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A5C12E591E8E5883008B9D0A /* ShopProxyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C12E581E8E5883008B9D0A /* ShopProxyExtension.swift */; };
 		EF83569B1F64E2CB00FA5F1D /* ConfigurationProvider.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF83569A1F64E2CB00FA5F1D /* ConfigurationProvider.plist */; };
+		EF83569D1F64E46C00FA5F1D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF83569C1F64E46C00FA5F1D /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -205,6 +206,7 @@
 		A5B14D5B1E8E665A00950FD4 /* SAPOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPOData.framework; sourceTree = "<group>"; };
 		A5C12E581E8E5883008B9D0A /* ShopProxyExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopProxyExtension.swift; sourceTree = "<group>"; };
 		EF83569A1F64E2CB00FA5F1D /* ConfigurationProvider.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ConfigurationProvider.plist; sourceTree = "<group>"; };
+		EF83569C1F64E46C00FA5F1D /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +258,7 @@
 				755EE24A1DD4760600F41DC4 /* AppDelegate.swift */,
 				755EE24C1DD4760700F41DC4 /* ProductListViewController.swift */,
 				755EE24E1DD4760700F41DC4 /* Main.storyboard */,
+				EF83569C1F64E46C00FA5F1D /* DetailViewController.swift */,
 				755EE2531DD4760700F41DC4 /* LaunchScreen.storyboard */,
 				755EE2511DD4760700F41DC4 /* Assets.xcassets */,
 				755EE2561DD4760700F41DC4 /* Info.plist */,
@@ -783,6 +786,7 @@
 				A52EBD9B1ECC54F70000BE41 /* ConnectionManager.swift in Sources */,
 				A52D9D071EA793030013F06A /* ReviewViewController.swift in Sources */,
 				A58403D41E8E53FB00C6817A /* ShopProxy.swift in Sources */,
+				EF83569D1F64E46C00FA5F1D /* DetailViewController.swift in Sources */,
 				A52EBDD31ECC55060000BE41 /* AuthorizationManager.swift in Sources */,
 				A52EBDC71ECC55060000BE41 /* Block.swift in Sources */,
 				A52EBDD41ECC55060000BE41 /* PasscodeBlock.swift in Sources */,

@@ -48,6 +48,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="1024" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Jtb-RZ-GLY" kind="show" id="aPe-j2-MOw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -72,6 +75,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMS-NF-dus" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="472.85156249999994" y="57.8125"/>
+        </scene>
+        <!--Product-->
+        <scene sceneID="f90-7r-eGj">
+            <objects>
+                <viewController title="Product" id="Jtb-RZ-GLY" customClass="DetailViewController" customModule="Shop" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HeS-dj-egl"/>
+                        <viewControllerLayoutGuide type="bottom" id="wI9-SZ-cjW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dZF-c2-LN9" customClass="ProductDetailView" customModule="Shop" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="productView" destination="dZF-c2-LN9" id="OQA-1R-knD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L4n-pG-7Iu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1205" y="58"/>
         </scene>
     </scenes>
 </document>
