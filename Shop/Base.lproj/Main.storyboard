@@ -49,7 +49,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Jtb-RZ-GLY" kind="show" id="aPe-j2-MOw"/>
+                                            <segue destination="Jtb-RZ-GLY" kind="show" identifier="showProductDetailSegue" id="aPe-j2-MOw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -67,7 +67,14 @@
                             <constraint firstItem="UtS-yD-0I3" firstAttribute="leading" secondItem="LKB-Fo-BH3" secondAttribute="leading" id="qHK-dT-y6u"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Shop" id="9nX-wc-WQu"/>
+                    <navigationItem key="navigationItem" title="Shop" id="9nX-wc-WQu">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="gix-dL-8V4">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8zx-9s-zN8" customClass="ShoppingCartButton" customModule="Shop" customModuleProvider="target">
+                                <rect key="frame" x="777" y="7" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="UtS-yD-0I3" id="LNc-S2-YJd"/>
                     </connections>
@@ -89,6 +96,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Product" id="9Bl-5r-xpZ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="7nq-BF-cs7">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1Y6-By-Fod" customClass="ShoppingCartButton" customModule="Shop" customModuleProvider="target">
+                                <rect key="frame" x="777" y="7" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="productView" destination="dZF-c2-LN9" id="OQA-1R-knD"/>
                     </connections>

@@ -25,6 +25,27 @@ class ProductListViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
+    /// Prepares the navigation to the DetailView or the FilterView
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let identifier = segue.identifier {
+            switch identifier {
+                
+            case "showProductDetailSegue":
+                
+                let detailController = segue.destination as! DetailViewController
+                let selectedRow = sender as! FUIObjectTableViewCell
+                let selectedIndexPath = tableView.indexPath(for: selectedRow)!
+                let selectedProduct = products[selectedIndexPath.row]
+                detailController.productID = selectedProduct.id
+                
+            default:
+                break
+            }
+        }
+    }
+
+    
     func loadProducts() {
         // Select properties to load
         var query = DataQuery().select(Product.id,
@@ -47,6 +68,8 @@ class ProductListViewController: UIViewController {
             self.tableView.separatorStyle = .singleLine
             self.loadingProductsCompleted(loadedProducts: products, error: error)
         }
+        NotificationCenter.default.post(name: Shop.shoppingCartDidUpdateNotification, object: nil)
+
     }
     
     /// Assign the loaded products, update the counter, reload the table and check if any errors occured
