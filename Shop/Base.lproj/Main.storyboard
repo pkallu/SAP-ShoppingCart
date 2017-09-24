@@ -70,8 +70,11 @@
                     <navigationItem key="navigationItem" title="Shop" id="9nX-wc-WQu">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="gix-dL-8V4">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8zx-9s-zN8" customClass="ShoppingCartButton" customModule="Shop" customModuleProvider="target">
-                                <rect key="frame" x="777" y="7" width="45" height="30"/>
+                                <rect key="frame" x="959" y="7" width="45" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="REu-M5-q5U" kind="presentation" modalPresentationStyle="formSheet" id="9KO-C4-r80"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -82,6 +85,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMS-NF-dus" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="472.85156249999994" y="57.8125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="E7e-kz-8bh">
+            <objects>
+                <navigationController id="REu-M5-q5U" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5IT-k5-fbb" customClass="FUINavigationBar" customModule="SAPFiori">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ugg-We-LbX" kind="relationship" relationship="rootViewController" id="WWD-bs-Vv4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yCD-FL-LbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="95" y="855"/>
+        </scene>
+        <!--Shopping Cart-->
+        <scene sceneID="fdb-YO-3tO">
+            <objects>
+                <viewController id="Ugg-We-LbX" customClass="ShoppingCartViewController" customModule="Shop" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pRS-aO-IAM"/>
+                        <viewControllerLayoutGuide type="bottom" id="gS8-Fz-SEt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lkn-db-4Em" customClass="WorklistView" customModule="Shop" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Shopping Cart" id="9ei-RM-Pik">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="bew-J6-C9L">
+                            <connections>
+                                <action selector="didTapClose:" destination="Ugg-We-LbX" id="9mF-ns-TkL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="workList" destination="lkn-db-4Em" id="Bio-7u-j27"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KpQ-ni-HsL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749" y="855"/>
         </scene>
         <!--Product-->
         <scene sceneID="f90-7r-eGj">
@@ -99,9 +146,12 @@
                     <navigationItem key="navigationItem" title="Product" id="9Bl-5r-xpZ">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="7nq-BF-cs7">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1Y6-By-Fod" customClass="ShoppingCartButton" customModule="Shop" customModuleProvider="target">
-                                <rect key="frame" x="777" y="7" width="45" height="30"/>
+                                <rect key="frame" x="959" y="7" width="45" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </button>
+                            <connections>
+                                <segue destination="REu-M5-q5U" kind="presentation" modalPresentationStyle="formSheet" id="9Dk-Bu-uJX"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -113,4 +163,7 @@
             <point key="canvasLocation" x="1205" y="58"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="9Dk-Bu-uJX"/>
+    </inferredMetricsTieBreakers>
 </document>

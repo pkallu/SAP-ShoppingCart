@@ -75,6 +75,24 @@ extension DetailViewController: ProductDetailViewDelegate {
     
     func didSelectAddToCart(_ button: FUIButton) {
         
+        guard let product = product else {
+            return
+        }
+        
+        button.isEnabled = false
+        
+        Shop.shared.oDataService?.addProductToShoppingCart(productID: product.id) { shoppingCartItem, error in
+            
+            button.isEnabled = true
+            
+            guard error == nil else {
+                self.logger.warn("Error adding product \(product.name) (\(product.id)) to shopping cart.", error: error)
+                return
+            }
+            
+            FUIToastMessage.show(message: "\(product.name) added to cart.", maxNumberOfLines: 2)
+            NotificationCenter.default.post(name: Shop.shoppingCartDidUpdateNotification, object: nil)
+        }
     }
     
     func didSelectReview(_ review: Review) {

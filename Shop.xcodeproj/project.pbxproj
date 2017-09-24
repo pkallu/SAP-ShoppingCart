@@ -98,6 +98,7 @@
 		A5C12E591E8E5883008B9D0A /* ShopProxyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C12E581E8E5883008B9D0A /* ShopProxyExtension.swift */; };
 		EF83569B1F64E2CB00FA5F1D /* ConfigurationProvider.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF83569A1F64E2CB00FA5F1D /* ConfigurationProvider.plist */; };
 		EF83569D1F64E46C00FA5F1D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF83569C1F64E46C00FA5F1D /* DetailViewController.swift */; };
+		EFFB2CB31F786CA4007C7ED3 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFB2CB21F786CA4007C7ED3 /* ShoppingCartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -207,6 +208,7 @@
 		A5C12E581E8E5883008B9D0A /* ShopProxyExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopProxyExtension.swift; sourceTree = "<group>"; };
 		EF83569A1F64E2CB00FA5F1D /* ConfigurationProvider.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ConfigurationProvider.plist; sourceTree = "<group>"; };
 		EF83569C1F64E46C00FA5F1D /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		EFFB2CB21F786CA4007C7ED3 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +253,7 @@
 		755EE2491DD4760600F41DC4 /* Shop */ = {
 			isa = PBXGroup;
 			children = (
+				EFFB2CB21F786CA4007C7ED3 /* ShoppingCartViewController.swift */,
 				A5B14CC91E8E5F3D00950FD4 /* Shop.swift */,
 				EF83569A1F64E2CB00FA5F1D /* ConfigurationProvider.plist */,
 				A58403D31E8E53FB00C6817A /* ShopProxy.swift */,
@@ -738,6 +741,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFFB2CB31F786CA4007C7ED3 /* ShoppingCartViewController.swift in Sources */,
 				A52EBDD81ECC55060000BE41 /* StandardLoginFlow.swift in Sources */,
 				A52EBDCA1ECC55060000BE41 /* OnboardingFlow.swift in Sources */,
 				A5B14D351E8E63AD00950FD4 /* CurrencyFormatter.swift in Sources */,
