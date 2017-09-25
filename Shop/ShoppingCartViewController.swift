@@ -61,8 +61,8 @@ class ShoppingCartViewController: UIViewController {
             
             // empty the shopping cart so that the items do not still show up when closing the worklist
             self.shoppingCart = nil
-            self.worklist.reloadData()
-            self.worklist.emptyListText = ""
+            self.workList.reloadData()
+            self.workList.emptyListText = ""
             
             modalCheckoutViewController.text = "Order Received"
             modalCheckoutViewController.changeDisplayState(to: .completed) {
