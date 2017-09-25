@@ -121,8 +121,14 @@
                                 <action selector="didTapClose:" destination="Ugg-We-LbX" id="9mF-ns-TkL"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Checkout" id="2PM-ib-Jf7">
+                            <connections>
+                                <action selector="didTapCheckout:" destination="Ugg-We-LbX" id="k1A-2F-JaP"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="checkoutButton" destination="2PM-ib-Jf7" id="Kry-eb-HGM"/>
                         <outlet property="workList" destination="lkn-db-4Em" id="Bio-7u-j27"/>
                     </connections>
                 </viewController>
