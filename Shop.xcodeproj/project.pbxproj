@@ -98,6 +98,7 @@
 		A5C12E591E8E5883008B9D0A /* ShopProxyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C12E581E8E5883008B9D0A /* ShopProxyExtension.swift */; };
 		EF1D81961F79F12600BF00B8 /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D81951F79F12600BF00B8 /* FilterModel.swift */; };
 		EF1D81981F7A760800BF00B8 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D81971F7A760800BF00B8 /* FilterViewController.swift */; };
+		EF1D819A1F7AC6C100BF00B8 /* QueryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D81991F7AC6C100BF00B8 /* QueryItems.swift */; };
 		EF83569B1F64E2CB00FA5F1D /* ConfigurationProvider.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF83569A1F64E2CB00FA5F1D /* ConfigurationProvider.plist */; };
 		EF83569D1F64E46C00FA5F1D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF83569C1F64E46C00FA5F1D /* DetailViewController.swift */; };
 		EFFB2CB31F786CA4007C7ED3 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFB2CB21F786CA4007C7ED3 /* ShoppingCartViewController.swift */; };
@@ -210,6 +211,7 @@
 		A5C12E581E8E5883008B9D0A /* ShopProxyExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopProxyExtension.swift; sourceTree = "<group>"; };
 		EF1D81951F79F12600BF00B8 /* FilterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
 		EF1D81971F7A760800BF00B8 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		EF1D81991F7AC6C100BF00B8 /* QueryItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryItems.swift; sourceTree = "<group>"; };
 		EF83569A1F64E2CB00FA5F1D /* ConfigurationProvider.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ConfigurationProvider.plist; sourceTree = "<group>"; };
 		EF83569C1F64E46C00FA5F1D /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EFFB2CB21F786CA4007C7ED3 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				A5C12E581E8E5883008B9D0A /* ShopProxyExtension.swift */,
 				755EE24A1DD4760600F41DC4 /* AppDelegate.swift */,
 				755EE24C1DD4760700F41DC4 /* ProductListViewController.swift */,
+				EF1D81991F7AC6C100BF00B8 /* QueryItems.swift */,
 				755EE24E1DD4760700F41DC4 /* Main.storyboard */,
 				EF83569C1F64E46C00FA5F1D /* DetailViewController.swift */,
 				755EE2531DD4760700F41DC4 /* LaunchScreen.storyboard */,
@@ -798,6 +801,7 @@
 				A52D9D071EA793030013F06A /* ReviewViewController.swift in Sources */,
 				A58403D41E8E53FB00C6817A /* ShopProxy.swift in Sources */,
 				EF83569D1F64E46C00FA5F1D /* DetailViewController.swift in Sources */,
+				EF1D819A1F7AC6C100BF00B8 /* QueryItems.swift in Sources */,
 				A52EBDD31ECC55060000BE41 /* AuthorizationManager.swift in Sources */,
 				A52EBDC71ECC55060000BE41 /* Block.swift in Sources */,
 				A52EBDD41ECC55060000BE41 /* PasscodeBlock.swift in Sources */,

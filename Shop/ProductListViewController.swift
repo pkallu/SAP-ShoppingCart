@@ -51,6 +51,11 @@ class ProductListViewController: UIViewController {
                 let selectedProduct = products[selectedIndexPath.row]
                 detailController.productID = selectedProduct.id
                 
+            case "showFilter":
+                let navigationController = segue.destination as! UINavigationController
+                let filterController = navigationController.topViewController as! FilterViewController
+                filterController.model = filterModel
+                filterController.delegate = self
             default:
                 break
             }
@@ -224,5 +229,23 @@ extension ProductListViewController : UISearchResultsUpdating {
             Shop.shared.oDataService?.product(query: self.filterModel.dataQuery,
                                               completionHandler: self.loadingProductsCompleted)
         }
+    }
+}
+
+// MARK: - FilterViewControllerDelegate
+extension ProductListViewController: FilterViewControllerDelegate {
+    
+    /// Update the filter model with the values from the FilterView and
+    /// reload the data.
+    func filterViewController(_ viewController: FilterViewController, didUpdate model: FilterModel) {
+        
+        filterModel = model
+        
+        // update the filter button with number of applied filters (if any)
+        let numberOfFilters = filterModel.numberOfNonDefaultFilters
+        filterButton.title = numberOfFilters > 0 ? "Filter (\(numberOfFilters))" : "Filter"
+        
+        // query again with modified filter
+        Shop.shared.oDataService?.product(query: filterModel.dataQuery, completionHandler: loadingProductsCompleted)
     }
 }
