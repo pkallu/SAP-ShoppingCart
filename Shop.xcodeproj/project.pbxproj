@@ -96,6 +96,8 @@
 		A5B14D6E1E8E66B600950FD4 /* SAPOData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5B14D5B1E8E665A00950FD4 /* SAPOData.framework */; };
 		A5B14D6F1E8E66B600950FD4 /* SAPOData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5B14D5B1E8E665A00950FD4 /* SAPOData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A5C12E591E8E5883008B9D0A /* ShopProxyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C12E581E8E5883008B9D0A /* ShopProxyExtension.swift */; };
+		EF1D81961F79F12600BF00B8 /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D81951F79F12600BF00B8 /* FilterModel.swift */; };
+		EF1D81981F7A760800BF00B8 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1D81971F7A760800BF00B8 /* FilterViewController.swift */; };
 		EF83569B1F64E2CB00FA5F1D /* ConfigurationProvider.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF83569A1F64E2CB00FA5F1D /* ConfigurationProvider.plist */; };
 		EF83569D1F64E46C00FA5F1D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF83569C1F64E46C00FA5F1D /* DetailViewController.swift */; };
 		EFFB2CB31F786CA4007C7ED3 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFB2CB21F786CA4007C7ED3 /* ShoppingCartViewController.swift */; };
@@ -206,6 +208,8 @@
 		A5B14D5A1E8E665A00950FD4 /* SAPFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPFoundation.framework; sourceTree = "<group>"; };
 		A5B14D5B1E8E665A00950FD4 /* SAPOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPOData.framework; sourceTree = "<group>"; };
 		A5C12E581E8E5883008B9D0A /* ShopProxyExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopProxyExtension.swift; sourceTree = "<group>"; };
+		EF1D81951F79F12600BF00B8 /* FilterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
+		EF1D81971F7A760800BF00B8 /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		EF83569A1F64E2CB00FA5F1D /* ConfigurationProvider.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ConfigurationProvider.plist; sourceTree = "<group>"; };
 		EF83569C1F64E46C00FA5F1D /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EFFB2CB21F786CA4007C7ED3 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
@@ -263,6 +267,8 @@
 				755EE24E1DD4760700F41DC4 /* Main.storyboard */,
 				EF83569C1F64E46C00FA5F1D /* DetailViewController.swift */,
 				755EE2531DD4760700F41DC4 /* LaunchScreen.storyboard */,
+				EF1D81951F79F12600BF00B8 /* FilterModel.swift */,
+				EF1D81971F7A760800BF00B8 /* FilterViewController.swift */,
 				755EE2511DD4760700F41DC4 /* Assets.xcassets */,
 				755EE2561DD4760700F41DC4 /* Info.plist */,
 			);
@@ -753,6 +759,7 @@
 				A52EBDDA1ECC55060000BE41 /* StandardOAuthFlow.swift in Sources */,
 				A5B14D391E8E63AD00950FD4 /* UIFontExtension.swift in Sources */,
 				A52EBDDB1ECC55060000BE41 /* StandardOAuthFlowError.swift in Sources */,
+				EF1D81961F79F12600BF00B8 /* FilterModel.swift in Sources */,
 				A52D9CF71EA792EE0013F06A /* RatingStars.swift in Sources */,
 				A5B14CDD1E8E617C00950FD4 /* ShoppingCartButton.swift in Sources */,
 				A5C12E591E8E5883008B9D0A /* ShopProxyExtension.swift in Sources */,
@@ -794,6 +801,7 @@
 				A52EBDD31ECC55060000BE41 /* AuthorizationManager.swift in Sources */,
 				A52EBDC71ECC55060000BE41 /* Block.swift in Sources */,
 				A52EBDD41ECC55060000BE41 /* PasscodeBlock.swift in Sources */,
+				EF1D81981F7A760800BF00B8 /* FilterViewController.swift in Sources */,
 				A52EBDD71ECC55060000BE41 /* StandardOAuthAppLaunchManager.swift in Sources */,
 				A52EBDD01ECC55060000BE41 /* ConnectionParameters.swift in Sources */,
 				A52D9CFD1EA792EF0013F06A /* RatingValues.swift in Sources */,

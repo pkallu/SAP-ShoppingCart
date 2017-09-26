@@ -38,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UtS-yD-0I3">
-                                <rect key="frame" x="0.0" y="108" width="1024" height="660"/>
+                                <rect key="frame" x="0.0" y="108" width="1024" height="616"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCellID" id="jlR-zj-cDe" customClass="FUIObjectTableViewCell" customModule="SAPFiori">
@@ -65,16 +65,34 @@
                                     <constraint firstAttribute="height" constant="44" id="983-Sj-3Le"/>
                                 </constraints>
                             </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QYi-3i-eJP">
+                                <rect key="frame" x="0.0" y="724" width="1024" height="44"/>
+                                <items>
+                                    <barButtonItem title="Filter" id="wez-nV-ro1">
+                                        <connections>
+                                            <segue destination="MUd-3R-sdT" kind="popoverPresentation" identifier="showFilter" popoverAnchorBarButtonItem="wez-nV-ro1" id="ZU9-pJ-UYB">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="faY-d6-nFk"/>
+                                    <barButtonItem title="Count" id="BO8-CY-fhC"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="usY-oR-CRE"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="vEd-Ie-QJ7" secondAttribute="trailing" id="0bs-oG-QT5"/>
                             <constraint firstItem="vEd-Ie-QJ7" firstAttribute="leading" secondItem="LKB-Fo-BH3" secondAttribute="leading" id="3hC-Z4-H1f"/>
+                            <constraint firstItem="QYi-3i-eJP" firstAttribute="leading" secondItem="LKB-Fo-BH3" secondAttribute="leading" id="Ovn-IX-BBc"/>
+                            <constraint firstAttribute="trailing" secondItem="QYi-3i-eJP" secondAttribute="trailing" id="Xl9-Nz-A1e"/>
                             <constraint firstAttribute="trailing" secondItem="UtS-yD-0I3" secondAttribute="trailing" id="Xoi-PB-NpK"/>
+                            <constraint firstItem="QYi-3i-eJP" firstAttribute="top" secondItem="UtS-yD-0I3" secondAttribute="bottom" id="ZNu-6z-Zi9"/>
                             <constraint firstItem="vEd-Ie-QJ7" firstAttribute="top" secondItem="QuJ-LW-bn0" secondAttribute="bottom" id="ZYG-lN-VWa"/>
                             <constraint firstItem="UtS-yD-0I3" firstAttribute="top" secondItem="vEd-Ie-QJ7" secondAttribute="bottom" id="c6c-xP-pev"/>
-                            <constraint firstItem="2KS-G8-xp3" firstAttribute="top" secondItem="UtS-yD-0I3" secondAttribute="bottom" id="g7Q-dj-kIB"/>
                             <constraint firstItem="UtS-yD-0I3" firstAttribute="leading" secondItem="LKB-Fo-BH3" secondAttribute="leading" id="qHK-dT-y6u"/>
+                            <constraint firstItem="2KS-G8-xp3" firstAttribute="top" secondItem="QYi-3i-eJP" secondAttribute="bottom" id="ujk-2v-6EW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Shop" id="9nX-wc-WQu">
@@ -89,6 +107,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="filterButton" destination="wez-nV-ro1" id="zLY-B4-CKz"/>
+                        <outlet property="productConutBarButtonItem" destination="BO8-CY-fhC" id="BHN-Bp-j6p"/>
                         <outlet property="searchBarContainer" destination="vEd-Ie-QJ7" id="Ra0-la-OJ8"/>
                         <outlet property="tableView" destination="UtS-yD-0I3" id="LNc-S2-YJd"/>
                     </connections>
@@ -96,6 +116,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMS-NF-dus" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="472.85156249999994" y="57.8125"/>
+        </scene>
+        <!--Filter-->
+        <scene sceneID="qZ3-dL-aJk">
+            <objects>
+                <tableViewController id="SLn-jv-POs" customClass="FilterViewController" customModule="Shop" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="J7y-8k-amZ">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fU3-aI-oFI">
+                                <rect key="frame" x="0.0" y="28" width="1024" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fU3-aI-oFI" id="j9S-mj-3ED">
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SLn-jv-POs" id="eUJ-dk-kT9"/>
+                            <outlet property="delegate" destination="SLn-jv-POs" id="oeX-ak-cxA"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Filter" id="Zdj-vt-lzJ">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="sqI-oO-xG7">
+                            <connections>
+                                <action selector="cancelFilter:" destination="SLn-jv-POs" id="PVg-0N-CRR"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="Gjd-Sq-Rvj">
+                            <connections>
+                                <action selector="applyFilter:" destination="SLn-jv-POs" id="AHP-SL-Go4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DqB-47-qZn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="185" y="794"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dxf-jT-89K">
+            <objects>
+                <navigationController id="MUd-3R-sdT" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kA2-da-j6E" customClass="FUINavigationBar" customModule="SAPFiori">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="SLn-jv-POs" kind="relationship" relationship="rootViewController" id="4I8-FF-7Fc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OvK-r1-zGU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-545" y="794"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="E7e-kz-8bh">
@@ -111,7 +187,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yCD-FL-LbM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="95" y="855"/>
+            <point key="canvasLocation" x="920" y="927"/>
         </scene>
         <!--Shopping Cart-->
         <scene sceneID="fdb-YO-3tO">
@@ -145,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KpQ-ni-HsL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749" y="855"/>
+            <point key="canvasLocation" x="1507" y="880"/>
         </scene>
         <!--Product-->
         <scene sceneID="f90-7r-eGj">

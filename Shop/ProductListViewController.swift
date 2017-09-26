@@ -21,14 +21,19 @@ class ProductListViewController: UIViewController {
     var productSearchBar: FUISearchBar!
     var searchController: FUISearchController!
     let debouncer = Debouncer()
-    
-    
+    var filterModel = FilterModel()
+
+    @IBOutlet weak var filterButton: UIBarButtonItem!
+    @IBOutlet weak var productConutBarButtonItem: UIBarButtonItem!
+    private var productCountLabel = UILabel(frame: CGRect.zero)
+
     @IBOutlet weak var searchBarContainer: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
         configureSearchBar()
+        setup()
 
     }
     
@@ -51,6 +56,27 @@ class ProductListViewController: UIViewController {
             }
         }
     }
+    
+    func setup() {
+        filterButton.tintColor = .preferredFioriColor(forStyle: .tintColorDark)
+    
+        // add centered label with product count to the toolbar
+        productCountLabel.sizeToFit()
+        productCountLabel.backgroundColor = .clear
+        productCountLabel.textAlignment = .center
+        productCountLabel.font = .preferredFioriFont(forTextStyle: .caption2)
+        productConutBarButtonItem.customView = productCountLabel
+    }
+    
+    /// Updates the label in the status bar with the product count.
+    func updateProductCounter() {
+        
+        let productText = products.count == 1 ? "Product" : "Products"
+        
+        productCountLabel.text = "\(products.count) \(productText)"
+        productCountLabel.sizeToFit()
+    }
+    
     // Configure the search bar and enable the barcode scanner functionality.
     private func configureSearchBar() {
         
@@ -76,29 +102,16 @@ class ProductListViewController: UIViewController {
     }
     
     func loadProducts() {
-        // Select properties to load
-        var query = DataQuery().select(Product.id,
-                                       Product.name,
-                                       Product.description,
-                                       Product.price,
-                                       Product.currencyCode,
-                                       Product.stockQuantity,
-                                       Product.mainCategoryName,
-                                       Product.ratingCount,
-                                       Product.averageRating)
-        
-        // expand primary image
-        query = query.expand(Product.primaryImage)
         
         // load the whole product list with required properties
         let loadingIndicator = FUIModalLoadingIndicator.show(inView: tableView)
-        Shop.shared.oDataService?.product(query: query) { products, error in
+        Shop.shared.oDataService?.product(query: filterModel.dataQuery) { products, error in
             loadingIndicator.dismiss()
             self.tableView.separatorStyle = .singleLine
             self.loadingProductsCompleted(loadedProducts: products, error: error)
         }
+        
         NotificationCenter.default.post(name: Shop.shoppingCartDidUpdateNotification, object: nil)
-
     }
     
     /// Assign the loaded products, update the counter, reload the table and check if any errors occured
@@ -122,6 +135,7 @@ class ProductListViewController: UIViewController {
         }
         
         self.products = products
+        updateProductCounter()
         tableView.reloadData()
     }
 }
@@ -204,6 +218,11 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
 extension ProductListViewController : UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
-        
+        debouncer.debounce {
+            let text = searchController.searchBar.text ?? ""
+            self.filterModel.searchText = text.trimmingCharacters(in: .whitespaces)
+            Shop.shared.oDataService?.product(query: self.filterModel.dataQuery,
+                                              completionHandler: self.loadingProductsCompleted)
+        }
     }
 }
