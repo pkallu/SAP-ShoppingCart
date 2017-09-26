@@ -38,7 +38,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UtS-yD-0I3">
-                                <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                                <rect key="frame" x="0.0" y="108" width="1024" height="660"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCellID" id="jlR-zj-cDe" customClass="FUIObjectTableViewCell" customModule="SAPFiori">
@@ -58,11 +58,21 @@
                                     <outlet property="delegate" destination="ZeL-AB-InM" id="Nuw-zE-vpF"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vEd-Ie-QJ7">
+                                <rect key="frame" x="0.0" y="64" width="1024" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="983-Sj-3Le"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vEd-Ie-QJ7" secondAttribute="trailing" id="0bs-oG-QT5"/>
+                            <constraint firstItem="vEd-Ie-QJ7" firstAttribute="leading" secondItem="LKB-Fo-BH3" secondAttribute="leading" id="3hC-Z4-H1f"/>
                             <constraint firstAttribute="trailing" secondItem="UtS-yD-0I3" secondAttribute="trailing" id="Xoi-PB-NpK"/>
-                            <constraint firstItem="UtS-yD-0I3" firstAttribute="top" secondItem="QuJ-LW-bn0" secondAttribute="bottom" id="aCQ-8A-HcD"/>
+                            <constraint firstItem="vEd-Ie-QJ7" firstAttribute="top" secondItem="QuJ-LW-bn0" secondAttribute="bottom" id="ZYG-lN-VWa"/>
+                            <constraint firstItem="UtS-yD-0I3" firstAttribute="top" secondItem="vEd-Ie-QJ7" secondAttribute="bottom" id="c6c-xP-pev"/>
                             <constraint firstItem="2KS-G8-xp3" firstAttribute="top" secondItem="UtS-yD-0I3" secondAttribute="bottom" id="g7Q-dj-kIB"/>
                             <constraint firstItem="UtS-yD-0I3" firstAttribute="leading" secondItem="LKB-Fo-BH3" secondAttribute="leading" id="qHK-dT-y6u"/>
                         </constraints>
@@ -79,6 +89,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBarContainer" destination="vEd-Ie-QJ7" id="Ra0-la-OJ8"/>
                         <outlet property="tableView" destination="UtS-yD-0I3" id="LNc-S2-YJd"/>
                     </connections>
                 </viewController>
@@ -170,6 +181,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9Dk-Bu-uJX"/>
+        <segue reference="9KO-C4-r80"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -18,11 +18,18 @@ class ProductListViewController: UIViewController {
     fileprivate var products = [Product]()
 
     let objectCellId = "ProductCellID"
+    var productSearchBar: FUISearchBar!
+    var searchController: FUISearchController!
+    let debouncer = Debouncer()
     
+    
+    @IBOutlet weak var searchBarContainer: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
+        configureSearchBar()
+
     }
     
     /// Prepares the navigation to the DetailView or the FilterView
@@ -44,7 +51,29 @@ class ProductListViewController: UIViewController {
             }
         }
     }
-
+    // Configure the search bar and enable the barcode scanner functionality.
+    private func configureSearchBar() {
+        
+        // set the searchResultsController to nil because we use this
+        // view controller for displaying the results
+        searchController = FUISearchController(searchResultsController: nil)
+        searchController.hidesNavigationBarDuringPresentation = true
+        searchController.searchResultsUpdater = self
+        productSearchBar = searchController.searchBar
+        
+        // Add barcode scanner
+        productSearchBar.isBarcodeScannerEnabled = true
+        productSearchBar.barcodeScanner?.scanMode = .all
+        productSearchBar.barcodeScanner?.scanResultTransformer = { scanResult in
+            return scanResult
+        }
+        
+        productSearchBar.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.searchBarContainer.addSubview(searchController.searchBar)
+        productSearchBar.sizeToFit()
+        
+        definesPresentationContext = true
+    }
     
     func loadProducts() {
         // Select properties to load
@@ -168,6 +197,13 @@ extension ProductListViewController: UITableViewDelegate, UITableViewDataSource 
         addToCart.backgroundColor = .preferredFioriColor(forStyle: .tintColorDark)
         return [addToCart]
         
+    }
+}
+
+//MARK: - UISearchResultsUpdating
+extension ProductListViewController : UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
         
     }
 }
